@@ -1,6 +1,22 @@
-/* ContactSection.jsx — real FormSubmit integration, no backend needed */
+/* ContactSection.jsx — FormSubmit + Globe.gl real Earth */
 function ContactSection() {
   const D = window.PORTFOLIO_DATA;
+  const globeEl = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!globeEl.current || !window.Globe) return;
+    const g = window.Globe()(globeEl.current)
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
+      .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundImageUrl(null)
+      .width(380).height(380)
+      .atmosphereColor('rgba(120, 80, 255, 0.9)')
+      .atmosphereAltitude(0.18);
+    g.controls().autoRotate = true;
+    g.controls().autoRotateSpeed = 0.6;
+    g.controls().enableZoom = false;
+  }, []);
+
   return (
     <section id="contact" data-screen-label="09 Contact">
       <div className="contact-left">
@@ -43,9 +59,8 @@ function ContactSection() {
         ) : null}
       </div>
       <div className="contact-right">
-        <div className="globe-wrap">
-          <div className="globe-orbit"></div>
-          <div className="globe"></div>
+        <div className="globe-wrap" style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div ref={globeEl}></div>
         </div>
       </div>
     </section>
