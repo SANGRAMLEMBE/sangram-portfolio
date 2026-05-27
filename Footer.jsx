@@ -11,7 +11,7 @@ function Footer() {
     { src: './assets/vscode.svg',     label: 'VS Code' },
     { src: './assets/github.svg',     label: 'GitHub', invert: true },
     { src: './assets/linkedin.svg',   label: 'LinkedIn' },
-    { src: './assets/aws.svg',        label: 'AWS' },
+    { src: './assets/aws.svg',        label: 'AWS', invert: true },
   ];
   return (
     <React.Fragment>

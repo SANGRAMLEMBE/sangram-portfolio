@@ -5,7 +5,7 @@ function ContactSection() {
 
   React.useEffect(() => {
     if (!globeEl.current || !window.Globe) return;
-    const g = window.Globe()(globeEl.current)
+    const g = window.Globe({ rendererConfig: { alpha: true } })(globeEl.current)
       .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
       .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
       .backgroundImageUrl(null)
@@ -31,8 +31,7 @@ function ContactSection() {
           action={`https://formsubmit.co/${D.contactEmail}`}
           method="POST"
         >
-          {/* FormSubmit configuration — these hidden fields control the email it sends */}
-          <input type="hidden" name="_subject" value="New portfolio contact · sangram-lembe.dev"/>
+          <input type="hidden" name="_subject" value="New portfolio contact · Sangram Lembe"/>
           <input type="hidden" name="_template" value="table"/>
           <input type="hidden" name="_captcha" value="false"/>
           <input type="hidden" name="_next" value={window.location.href + '?sent=1'}/>

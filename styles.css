@@ -1,12 +1,11 @@
-/* Portfolio styles — adapted from the reference site, tightened, and rewired
-   to use the design system's CSS variables from colors_and_type.css. */
+/* Sangram Lembe Portfolio — main stylesheet */
 
 @import url('./colors_and_type.css');
 
 * , *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: #050508; }
 body {
-  background: var(--bg-1);
+  background: transparent;
   color: var(--fg-1);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -133,7 +132,7 @@ nav.nav {
 .sec-center { text-align: center; }
 
 /* About */
-#about { background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%); }
+#about { background: linear-gradient(180deg, rgba(8,8,8,0.82) 0%, rgba(13,13,22,0.82) 100%); }
 .about-body { font-size: 1rem; line-height: 1.88; color: var(--fg-2); max-width: 800px; margin-bottom: 2.8rem; }
 .gem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.95rem; }
 .gem-card {
@@ -151,7 +150,7 @@ nav.nav {
 .gem-sub { font-size: 0.78rem; color: var(--fg-2); line-height: 1.55; }
 
 /* Timeline */
-#experience { background: var(--bg-1); }
+#experience { background: rgba(8,8,8,0.82); }
 .tl-wrap { position: relative; max-width: 880px; margin: 2.8rem auto 0; padding: 1rem 0; }
 .tl-line {
   position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
@@ -180,7 +179,7 @@ nav.nav {
 .tl-ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); }
 
 /* Projects */
-#projects { background: var(--bg-2); }
+#projects { background: rgba(13,13,22,0.82); }
 .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.5rem; }
 .proj-card {
   background: var(--bg-3); border: 1px solid var(--border-2);
@@ -226,7 +225,7 @@ nav.nav {
 .proj-link::after { content: '→'; }
 
 /* Achievements */
-#achievements { background: var(--bg-1); }
+#achievements { background: rgba(8,8,8,0.82); }
 .ach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.5rem; }
 .ach-card {
   background: var(--bg-3); border-radius: 13px; padding: 1.5rem;
@@ -251,7 +250,7 @@ nav.nav {
 .ach-desc { font-size: 0.76rem; color: var(--fg-2); line-height: 1.58; }
 
 /* Skills */
-#skills { background: var(--bg-2); }
+#skills { background: rgba(13,13,22,0.82); }
 .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
 .skill-cat {
   background: var(--bg-3); border: 1px solid var(--border-2);
@@ -273,7 +272,7 @@ nav.nav {
 .pill:hover { border-color: var(--gold); color: var(--gold); }
 
 /* Certs */
-#certifications { background: var(--bg-1); }
+#certifications { background: rgba(8,8,8,0.82); }
 .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.95rem; margin-top: 2.5rem; }
 .cert-card {
   background: var(--bg-3); border-radius: 12px; padding: 1.3rem;
@@ -286,7 +285,7 @@ nav.nav {
 .cert-meta { font-family: var(--font-mono); font-size: 0.68rem; color: var(--fg-2); }
 
 /* Inspiration / testimonial */
-#inspiration { background: var(--bg-2); }
+#inspiration { background: rgba(13,13,22,0.82); }
 .insp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.5rem; }
 .insp-card {
   background: var(--bg-4); border: 1px solid rgba(42,31,110,0.6);
@@ -323,7 +322,7 @@ nav.nav {
 
 /* Contact */
 #contact {
-  background: #000; display: flex; align-items: center; min-height: 100vh;
+  background: rgba(0,0,0,0.82); display: flex; align-items: center; min-height: 100vh;
   padding: 5.5rem 3.5rem; overflow: hidden; position: relative;
 }
 #contact::before {
@@ -383,82 +382,11 @@ nav.nav {
 }
 .btn-send:hover { border-color: var(--gold); color: var(--gold); box-shadow: 0 0 14px rgba(201,169,110,0.17); }
 
-/* Globe — painted continent + dotted orbit ring (matches reference) */
+/* Globe container */
 .globe-wrap {
   position: relative;
   width: 420px; height: 420px;
   display: flex; align-items: center; justify-content: center;
-}
-.globe-orbit {
-  position: absolute; inset: 0;
-  border-radius: 50%;
-  background:
-    /* dotted ring made by repeating radial gradients */
-    radial-gradient(2px 2px at 50% 0%, rgba(255,255,255,0.85), transparent 2px),
-    radial-gradient(2px 2px at 95% 25%, rgba(255,255,255,0.7), transparent 2px),
-    radial-gradient(2px 2px at 100% 50%, rgba(255,255,255,0.85), transparent 2px),
-    radial-gradient(2px 2px at 95% 75%, rgba(255,255,255,0.7), transparent 2px),
-    radial-gradient(2px 2px at 50% 100%, rgba(255,255,255,0.85), transparent 2px),
-    radial-gradient(2px 2px at 5% 75%, rgba(255,255,255,0.7), transparent 2px),
-    radial-gradient(2px 2px at 0% 50%, rgba(255,255,255,0.85), transparent 2px),
-    radial-gradient(2px 2px at 5% 25%, rgba(255,255,255,0.7), transparent 2px),
-    radial-gradient(1.5px 1.5px at 70% 8%, rgba(255,255,255,0.6), transparent 2px),
-    radial-gradient(1.5px 1.5px at 92% 40%, rgba(255,255,255,0.55), transparent 2px),
-    radial-gradient(1.5px 1.5px at 80% 90%, rgba(255,255,255,0.6), transparent 2px),
-    radial-gradient(1.5px 1.5px at 25% 95%, rgba(255,255,255,0.55), transparent 2px),
-    radial-gradient(1.5px 1.5px at 8% 65%, rgba(255,255,255,0.6), transparent 2px),
-    radial-gradient(1.5px 1.5px at 18% 12%, rgba(255,255,255,0.55), transparent 2px),
-    radial-gradient(1.5px 1.5px at 45% 5%, rgba(255,255,255,0.5), transparent 2px),
-    radial-gradient(1px 1px at 60% 95%, rgba(255,255,255,0.45), transparent 2px);
-  transform: rotateX(72deg);
-  animation: orbitSpin 30s linear infinite;
-  filter: drop-shadow(0 0 8px rgba(140,110,220,0.4));
-}
-@keyframes orbitSpin {
-  0% { transform: rotateX(72deg) rotate(0deg); }
-  100% { transform: rotateX(72deg) rotate(360deg); }
-}
-
-.globe {
-  width: 280px; height: 280px; border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 28%, #4a78c8 0%, #2a4ea0 22%, #1a2d6e 50%, #0a1240 80%, #050828 100%);
-  box-shadow:
-    inset -22px -22px 70px rgba(0,0,0,0.75),
-    inset 12px 14px 28px rgba(120,150,220,0.20),
-    0 0 60px rgba(80,100,200,0.40),
-    0 0 140px rgba(60,40,160,0.20);
-  position: relative;
-  overflow: hidden;
-  animation: globeRotate 60s linear infinite;
-}
-/* Painted continent — abstract green landmass, like the reference */
-.globe::before {
-  content: '';
-  position: absolute;
-  top: 18%; left: 38%;
-  width: 30%; height: 60%;
-  background:
-    radial-gradient(ellipse 80% 40% at 50% 15%, #4ba850 0%, #3e8c42 40%, transparent 70%),
-    radial-gradient(ellipse 90% 55% at 50% 55%, #4ba850 0%, #3a803e 50%, transparent 80%),
-    radial-gradient(ellipse 70% 35% at 45% 90%, #3e8c42 0%, #2f6a35 50%, transparent 75%);
-  border-radius: 45% 55% 60% 40% / 35% 50% 50% 65%;
-  filter: blur(0.6px);
-  opacity: 0.95;
-}
-/* Atmospheric highlight on top-left */
-.globe::after {
-  content: '';
-  position: absolute; inset: 0;
-  border-radius: 50%;
-  background:
-    radial-gradient(ellipse 55% 40% at 28% 22%, rgba(180,200,255,0.22) 0%, transparent 65%),
-    radial-gradient(ellipse 30% 80% at 92% 50%, rgba(80,100,180,0.30) 0%, transparent 70%);
-  pointer-events: none;
-}
-@keyframes globeRotate {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* ----- CUSTOM CURSOR ----- */
@@ -493,7 +421,7 @@ nav.nav {
 }
 
 /* Tech bar */
-.tech-bar { background: var(--bg-1); padding: 2.2rem 3.5rem; border-top: 1px solid var(--border-1); position: relative; z-index: 1; }
+.tech-bar { background: rgba(8,8,8,0.90); padding: 2.2rem 3.5rem; border-top: 1px solid var(--border-1); position: relative; z-index: 1; }
 .tech-inner { max-width: 1180px; margin: 0 auto; display: flex; gap: 2.2rem; justify-content: center; flex-wrap: wrap; }
 .tl-logo { display: flex; flex-direction: column; align-items: center; gap: 0.38rem; transition: transform 0.22s; }
 .tl-logo:hover { transform: translateY(-4px); }
@@ -504,7 +432,7 @@ nav.nav {
 .tl-logo span { font-family: var(--font-mono); font-size: 0.7rem; color: var(--fg-2); }
 
 footer {
-  padding: 1.6rem 3.5rem; background: var(--bg-1);
+  padding: 1.6rem 3.5rem; background: rgba(8,8,8,0.90);
   border-top: 1px solid var(--border-1);
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 0.75rem; position: relative; z-index: 1;

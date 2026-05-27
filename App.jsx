@@ -1,5 +1,76 @@
-/* App.jsx — composes the portfolio + handles fade-up + scroll progress + custom cursor */
+/* App.jsx — portfolio shell */
 function App() {
+  const galaxy = React.useRef(null);
+
+  React.useEffect(() => {
+    const cv = galaxy.current;
+    if (!cv) return;
+    const ctx = cv.getContext('2d');
+    let W, H, animId, t = 0;
+
+    const stars = Array.from({ length: 320 }, (_, i) => ({
+      x: 0, y: 0,
+      r: i < 200 ? Math.random() * 0.8 + 0.2          // far: tiny
+        : i < 270 ? Math.random() * 1.2 + 0.7          // mid
+        :           Math.random() * 1.6 + 1.0,          // near: larger
+      op: Math.random() * 0.7 + 0.2,
+      dy: i < 200 ? Math.random() * 0.12 + 0.03
+        : i < 270 ? Math.random() * 0.22 + 0.10
+        :           Math.random() * 0.40 + 0.18,
+      tw: Math.random() * Math.PI * 2,
+    }));
+
+    const nebulae = [
+      { cx: 0.15, cy: 0.10, rx: 0.32, c: 'rgba(55,18,130,0.18)' },
+      { cx: 0.80, cy: 0.28, rx: 0.28, c: 'rgba(38,12,100,0.15)' },
+      { cx: 0.42, cy: 0.55, rx: 0.38, c: 'rgba(65,22,145,0.16)' },
+      { cx: 0.08, cy: 0.78, rx: 0.24, c: 'rgba(45,15,110,0.13)' },
+      { cx: 0.88, cy: 0.72, rx: 0.30, c: 'rgba(50,16,120,0.15)' },
+    ];
+
+    const init = () => {
+      W = cv.width  = window.innerWidth;
+      H = cv.height = window.innerHeight;
+      stars.forEach(s => { s.x = Math.random() * W; s.y = Math.random() * H; });
+    };
+
+    const draw = () => {
+      t++;
+      ctx.clearRect(0, 0, W, H);
+
+      nebulae.forEach(n => {
+        const g = ctx.createRadialGradient(n.cx*W, n.cy*H, 0, n.cx*W, n.cy*H, n.rx*W);
+        g.addColorStop(0, n.c); g.addColorStop(1, 'transparent');
+        ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      });
+
+      stars.forEach(s => {
+        s.y -= s.dy;
+        if (s.y < -s.r) { s.y = H + s.r; s.x = Math.random() * W; }
+        const tw = 0.65 + 0.35 * Math.sin(t * 0.025 + s.tw);
+        const alpha = s.op * tw;
+        if (s.r > 1.2) {
+          const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
+          glow.addColorStop(0, `rgba(200,215,255,${(alpha * 0.28).toFixed(3)})`);
+          glow.addColorStop(1, 'transparent');
+          ctx.fillStyle = glow;
+          ctx.fillRect(s.x - s.r*5, s.y - s.r*5, s.r*10, s.r*10);
+        }
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(215,225,255,${alpha.toFixed(3)})`;
+        ctx.fill();
+      });
+
+      animId = requestAnimationFrame(draw);
+    };
+
+    init();
+    draw();
+    window.addEventListener('resize', init);
+    return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', init); };
+  }, []);
+
   React.useEffect(() => {
     // ---- Fade-up observer ----
     const io = new IntersectionObserver((entries) => {
@@ -59,6 +130,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <canvas ref={galaxy} style={{position:'fixed',inset:0,width:'100%',height:'100%',zIndex:-1,pointerEvents:'none'}}/>
       <div className="floral"></div>
       <div className="prog" id="prog"></div>
       <div id="cur"></div>
