@@ -1,0 +1,221 @@
+/* ============================================================
+   Sangram Lembe — Portfolio Design System
+   Visual tokens distilled from the reference site
+   (ShriHarsan64K.github.io). Dark-background "scholar's
+   midnight" palette with warm gold accents and a deep-purple
+   moonglow on cards.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Brand / accent ---------- */
+  --gold:        #c9a96e;   /* primary accent — buttons, highlights, gold text */
+  --gold-2:      #e2c48a;   /* hover / lighter accent */
+  --gold-tint:   rgba(201,169,110,0.15);
+  --gold-glow:   rgba(201,169,110,0.32);
+
+  /* ---------- Background scale ---------- */
+  --bg-0:        #000000;   /* contact / starfield */
+  --bg-1:        #080808;   /* primary page background */
+  --bg-2:        #0d0d16;   /* alt section background, midnight blue-black */
+  --bg-3:        #131328;   /* card surface */
+  --bg-4:        #191935;   /* elevated card / testimonial */
+
+  /* ---------- Deep purple (moonglow on cards / timeline node) ---------- */
+  --purple-1:    #2a1f6e;
+  --purple-tint: rgba(42,31,110,0.80);
+  --purple-soft: rgba(42,31,110,0.40);
+
+  /* ---------- Text ---------- */
+  --fg-1:        #f2f2f2;   /* headlines, body emphasis */
+  --fg-2:        #9999bb;   /* secondary body, captions */
+  --fg-3:        rgba(153,153,187,0.38); /* placeholders, disabled */
+
+  /* ---------- Borders / dividers ---------- */
+  --border-1:    rgba(255,255,255,0.06);
+  --border-2:    rgba(42,31,110,0.90);   /* card border, purple-tinted */
+  --border-3:    rgba(201,169,110,0.26); /* hover gold border */
+
+  /* ---------- Tag / pill semantic swatches (used on project chips) ---------- */
+  --tag-ts:      #64b5f6;   /* TypeScript, blue */
+  --tag-py:      #90caf9;   /* Python */
+  --tag-fl:      #4dd0a7;   /* Flask, green */
+  --tag-gp:      #c9a96e;   /* GPT-4 / gold */
+  --tag-re:      #b39ddb;   /* RAG / purple */
+  --tag-ra:      #80deea;   /* RAG variant / cyan */
+  --tag-yo:      #ffcc80;   /* YOLO / amber */
+  --tag-dl:      #f48fb1;   /* Deep Learning / pink */
+  --tag-cv:      #ce93d8;   /* Computer Vision / violet */
+  --tag-pt:      #f48fb1;   /* PyTorch / pink */
+  --tag-pm:      #80cbc4;   /* Physics-ML / teal */
+  --tag-st:      #ffcc80;   /* Streamlit */
+  --tag-na:      #a5d6a7;   /* NetworkX / green */
+  --tag-ag:      #ffe082;   /* Agents */
+
+  /* ---------- Medal / badge colors ---------- */
+  --medal-gold:   #c9a96e;
+  --medal-silver: #c0c0c0;
+  --medal-bronze: #cd7f32;
+  --medal-cyan:   #00bcd4;
+
+  /* ---------- Spacing scale ---------- */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5.5rem;   /* section vertical padding */
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 4px;   /* tag pills */
+  --radius-sm: 6px;   /* buttons */
+  --radius-md: 8px;   /* form fields */
+  --radius-lg: 12px;  /* cert / small card */
+  --radius-xl: 14px;  /* feature card */
+  --radius-pill: 999px;
+
+  /* ---------- Shadows / elevation ---------- */
+  --elev-1: 0 8px 22px rgba(201,169,110,0.32);            /* primary CTA hover */
+  --elev-2: 0 12px 32px rgba(0,0,0,0.42);                 /* card hover */
+  --elev-3: 0 15px 34px rgba(0,0,0,0.50);                 /* feature card hover */
+  --elev-4: 0 18px 42px rgba(0,0,0,0.48);                 /* project card hover */
+  --elev-glow-purple: 0 0 16px rgba(42,31,110,0.65);      /* timeline node */
+  --elev-glow-gold:   0 0 12px var(--gold);               /* hero dot */
+
+  /* ---------- Fonts ---------- */
+  --font-display: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-body:    'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --dur-fast:  150ms;
+  --dur-base:  250ms;
+  --dur-slow:  600ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE SCALE
+   These map directly to the patterns used on the reference site.
+   ============================================================ */
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--fg-1);
+  background: var(--bg-1);
+}
+
+/* Hero name — huge gold-accented headline */
+.t-hero {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+.t-hero .gold { color: var(--gold); }
+
+/* Section heading — "Overview.", "Work.", "Contact." */
+.t-section-h, h2.t-section-h {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  line-height: 1.05;
+  color: var(--fg-1);
+}
+.t-section-h em { color: var(--gold); font-style: normal; }
+
+/* Eyebrow — small uppercase mono kicker above section headings */
+.t-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+/* Card / project / cert title */
+.t-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.96rem;
+  color: var(--fg-1);
+  line-height: 1.4;
+}
+
+/* Card subtitle — company / org line, typically gold */
+.t-org {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.79rem;
+  color: var(--gold);
+}
+
+/* Body copy on cards */
+.t-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--fg-2);
+}
+
+/* Long-form about paragraph */
+.t-prose {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.88;
+  color: var(--fg-2);
+}
+
+/* Tagline — gold mono single-line */
+.t-tagline {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+/* Code / pill / mono inline */
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--fg-2);
+}
+
+/* Stat value — big gold number */
+.t-stat-val {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gold);
+}
+.t-stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--fg-2);
+}
+
+/* Caption / meta date row */
+.t-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--fg-2);
+}
