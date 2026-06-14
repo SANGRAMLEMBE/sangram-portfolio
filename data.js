@@ -1,5 +1,4 @@
-/* Sangram Lembe's content — pulled from resume + LinkedIn + GitHub.
-   Edit values here and the portfolio updates automatically. */
+/* Portfolio content — projects, experience, skills, certifications */
 
 window.PORTFOLIO_DATA = {
   name: { first: 'Sangram', last: 'Lembe' },
@@ -16,7 +15,7 @@ computer vision.`,
 
   stats: [
     { val: '3+',  lbl: 'HACKATHONS / RESEARCH' },
-    { val: '8.39', lbl: 'CGPA · M.TECH' },
+    { val: '8.80', lbl: 'CGPA · M.TECH' },
     { val: 'Top 0.1%', lbl: 'META RL HACKATHON' },
   ],
 
@@ -52,7 +51,7 @@ computer vision.`,
       ] },
     { side: 'right', icon: '🎓', date: '2025 – 2027',
       role: 'M.Tech in Data Engineering',
-      co:   'SRM IST Chennai · CGPA 8.39',
+      co:   'SRM IST Chennai · CGPA 8.80',
       bullets: [
         'Coursework in distributed systems, big-data pipelines, and deep learning.',
         'Research focus: multi-agent reinforcement learning + computer vision for real-world deployment.',
@@ -72,6 +71,12 @@ computer vision.`,
       desc: 'Six-agent RL environment simulating cascading supply-chain crises across India with live weather, currency, and GDELT conflict APIs — recognised as **"top 0.1% of RL developers"** by a Meta engineer. Fine-tuned **Llama-3-8B** with GRPO and Unsloth 4-bit QLoRA on A100, producing emergent agent behaviours like pre-emptive cold-storage deployment and two-turn-early geopolitical alerts.',
       tags: [['t-py','Python'],['t-pt','PyTorch'],['t-ag','Multi-Agent'],['t-re','GRPO'],['t-ll','Llama-3']],
       link: 'https://github.com/SANGRAMLEMBE/logicriasis' },
+
+    { badge: '🔬 ACTIVE RESEARCH · IEEE TGRS · CSIR-CSIO', first: false,
+      title: 'DroneSegNet',
+      desc: 'Altitude-aware hybrid CNN-Transformer for UAV semantic segmentation on the **UAVid benchmark**. Best result: **75.41% mIoU** (test-time augmentation) — within **0.08%** of published SOTA (GCS-SegFormer 75.49%). Single-model best: **75.18%** (V5 with CutMix + DropPath). Architecture: **ConvNeXt-Tiny + FPN** encoder with FiLM altitude conditioning and Cross-Scale Consistency Loss. Surpasses UNetFormer baseline by **+1.05%**. Manuscript targeting IEEE Transactions on Geoscience and Remote Sensing. Research ongoing at CSIR-CSIO, Chennai.',
+      tags: [['t-py','Python'],['t-pt','PyTorch'],['t-cv','Computer Vision'],['t-dl','ConvNeXt'],['t-yo','UAVid']],
+      link: 'https://github.com/SANGRAMLEMBE' },
 
     { badge: '🥇 GOLD MEDAL · BEST RESEARCH PAPER', first: false,
       title: 'Psychological Well-being Forecasting',
@@ -109,7 +114,7 @@ computer vision.`,
     { medal: '',   badge: '🥇 GOLD MEDAL',   badgeCls: 'bg-g', title: 'SRM Research Day · Best Paper', org: 'Department of Psychology · 2026',     desc: 'Forecasting psychological well-being of 1,000 students with PCA + PSO + stacked ensembles.', cardCls: '' },
     { medal: '',   badge: '📚 PUBLISHED',    badgeCls: 'bg-g', title: 'IJIRSET · LLM Image Classification', org: 'Pune · May 2024',               desc: 'Features-preserving blurred-image classification using LLMs. DOI 10.15680/IJIRSET.2024.1305313.', cardCls: '' },
     { medal: '',   badge: '🏆 QUALIFIER',    badgeCls: 'bg-c', title: 'Banking Support Agent · Round 1', org: 'Meta OpenEnv 2026',                 desc: 'Built fraud-dispute-resolution RL environment that qualified Round 1 of the Meta hackathon.', cardCls: 'cy' },
-    { medal: '',   badge: '🎓 M.TECH',       badgeCls: 'bg-g', title: 'CGPA 8.39 / 10',                org: 'SRM IST Chennai · 2025 – 2027',       desc: 'Data Engineering specialisation — distributed systems, big-data pipelines, and deep learning.', cardCls: '' },
+    { medal: '',   badge: '🎓 M.TECH',       badgeCls: 'bg-g', title: 'CGPA 8.80 / 10',                org: 'SRM IST Chennai · 2025 – 2027',       desc: 'Data Engineering specialisation — distributed systems, big-data pipelines, and deep learning.', cardCls: '' },
     { medal: '',   badge: '🎓 B.TECH',       badgeCls: 'bg-s', title: 'CGPA 8.31 / 10',                org: 'G.H. Raisoni College, Pune · 2024',  desc: 'Artificial Intelligence specialisation — strong foundation across ML, DL, and NLP.', cardCls: 'sv' },
   ],
 
