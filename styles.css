@@ -286,7 +286,7 @@ nav.nav {
 
 /* Inspiration / testimonial */
 #inspiration { background: rgba(13,13,22,0.82); }
-.insp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.5rem; }
+.insp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.5rem; align-items: start; }
 .insp-card {
   background: var(--bg-4); border: 1px solid rgba(42,31,110,0.6);
   border-radius: 15px; padding: 1.8rem 1.65rem 1.5rem;
