@@ -93,9 +93,9 @@ pursuing my M.Tech in Data Engineering at SRM IST Chennai.`,
       tags: [['t-py','Python'],['t-pt','scikit-learn'],['t-cv','PCA'],['t-st','Streamlit']],
       link: 'https://github.com/SANGRAMLEMBE/mental_health_Project' },
 
-    { badge: '🌱 CLIMATE TECH · FULL-STACK', first: false,
+    { badge: '🏆 RANK 17 / 45,000 ALL INDIA · GOOGLE PROMPT WARS', first: false,
       title: 'Greenprint',
-      desc: 'A carbon-footprint platform that treats the calculation as science, not vibes — every emission factor is source-cited (DEFRA, EPA, IEA, IPCC AR6), and a short questionnaire becomes a ranked action plan with **per-action CO₂e savings** plus live UK grid-intensity signals for timing energy-heavy tasks. Engineered to production standards: Next.js with strict TypeScript, a pure calculation engine at **~100% test coverage**, **WCAG 2.2 AA** accessibility, and local-first privacy — no personal data leaves the device.',
+      desc: 'A carbon-footprint platform that treats the calculation as science, not vibes — every emission factor is source-cited (DEFRA, EPA, IEA, IPCC AR6), and a short questionnaire becomes a ranked action plan with **per-action CO₂e savings** plus live UK grid-intensity signals for timing energy-heavy tasks. Engineered to production standards: Next.js with strict TypeScript, a pure calculation engine at **~100% test coverage**, **WCAG 2.2 AA** accessibility, and local-first privacy. **Ranked 17th of 45,000 entries across India** — top 0.04% — in Google Prompt Wars.',
       tags: [['t-py','Next.js'],['t-st','TypeScript'],['t-cv','Tailwind'],['t-ra','Playwright']],
       link: 'https://github.com/SANGRAMLEMBE/greenprint' },
 
@@ -105,9 +105,9 @@ pursuing my M.Tech in Data Engineering at SRM IST Chennai.`,
       tags: [['t-py','Python'],['t-yo','YOLOv8'],['t-dl','ByteTrack'],['t-cv','Computer Vision']],
       link: 'https://github.com/SANGRAMLEMBE/aerial-guardian' },
 
-    { badge: '🚀 HACKATHON · GEMINI + GCP', first: false,
+    { badge: '🚀 RANK 39 / 42,000 ALL INDIA · GOOGLE PROMPT WARS', first: false,
       title: 'VenueFlow',
-      desc: 'Real-time stadium and event-venue flow analytics built for the **Prompt Wars 2026 hackathon**. **Gemini AI + Google Cloud + FastAPI** backend with a PWA front-end and WebSocket live updates for crowd, queue, and gate metrics.',
+      desc: 'Real-time stadium and event-venue flow analytics — **Gemini AI + Google Cloud + FastAPI** backend with a PWA front-end and WebSocket live updates for crowd, queue, and gate metrics. **Placed 39th of 42,000 entries across India** — top 0.1% — in the Google Prompt Wars 2026 hackathon.',
       tags: [['t-py','Python'],['t-fl','FastAPI'],['t-gp','Gemini'],['t-ra','WebSocket']],
       link: 'https://github.com/SANGRAMLEMBE/venueflow' },
 
